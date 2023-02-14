@@ -1,26 +1,101 @@
-==================================
-Name -Gurpinder Singh
-Student ID -140515206
-Email -  gsingh944@myseneca.ca
+// ===================================================================================
+//  Assignment: 2 
+//  Milestone : 4
+// ===================================================================================
+//  Student Name  : Gurpinder Singh
+//  Student ID    : 140515206
+//  Student Email : gsingh944@myseneca.ca
+//  Course Section: ZEE
+// ===================================================================================
 
-===================================
-Q-) Explain the concepts that you learn after completing this workshop?
-Ans) Programming is not an easy. I have a keen interest in programming but sometimes I stuck on 
-        various then I use many different books and websites to solve that issue.
-        In this Workshop I learn plethora of concepts:
-        1)A class's member functions can be defined either outside or inside the class specification. The function body is same in both situations, 
-          but the function header is different. 
-        2) If you want to define a member function outside of a class, you must include the function declaration (function prototype) in the class definition. 
-           Like any other function, the member function is declared inside the class. This declaration tells the compiler that the function is a member of the class 
-          but was defined outside of it. A member function must be defined (outside the class) in the programme after it is declared inside the class.
-       3)A class's member function can also be specified within the class. The class name and the scope resolution operator are not mentioned in the function header when a member function is defined inside the class. 
-          Furthermore, member functions specified within a class declaration are inline functions by default.
 
-Q-) Explain the difficulties that you face in this workshop?
-Ans) I face several difficulties on working with this workshop: 
-        1) In the PairSummable class, I utilised two static variables: one is an unknown typed variable that stores the value, and the other is a size t type variable that stores the minimum field width.
-           Because static variables cannot be initialised within a class, I had to specify them outside of the class. Another issue is that I needed to initialise a "initial" variable that didn't know what type it was. 
-           Furthermore, this variable serves as the default value in the PairSummable(const K& key, const V& value = initial) argument.
-       2) I utilised template class in all header files. To put it another way, I've declared every function in every header file.
-          The explanation is simple: if I create a templet class in the header file and define functions in the cpp file, as in prior workshops, the compiler will fail to build because it does not recognise the data type.
-           A template isn't a function or a class. As a result, the template's declaration and definition should be implemented at the same time so that the compiler can read it.
+
+Q-1). NOT including the mandatory functions stated in the specifications from Assignments 1 and 2, LIST
+      all the functions (use the prototypes) you created. Categorize them by module/library in the 
+      following sequence (if you did not create any functions for a given module/library, simply state 
+      "None developed"):
+     a) commonHelpers.h
+     b) account.h
+     c) ticket.h
+     d) accountTicketingUI.h
+Ans) Following functions I developed in this program that are as follows in these four different files.
+
+      a) commonHelpers.h - Libraray function
+         char getCharOption(char fgg[7]); - module function
+         void getCString(char fhx[], int fhy, int fhz); - Libraray function
+         int getIntFromRange(int fdx, int fdy); - module function
+
+     b) account.h 
+         void getAccount(struct Account* ac);- module function
+         void getUserLogin(struct Account* us); - module function
+         void getDemographic(struct Account* de);- Libraray function
+         void updateAccount(struct AccountTicketingData* ac, int ii, struct AccountTicketingData acb);- module function
+         void Viewarchivedaccount(struct AccountTicketingData delac);- module function
+         void Viewarchivedticket(struct AccountTicketingData delac);- Libraray function
+         void achcloseac(struct AccountTicketingData* ac, struct AccountTicketingData acb, struct AccountTicketingData delac); -- Libraray function
+         void countSavingSessionModifications(struct AccountTicketingData ac); - module function
+
+    c) accountTicketingUI.h
+         void displayAccountSummaryRecord(struct AccountTicketingData ac, int ii);- module function
+         void displayAccountDetailRecord(struct AccountTicketingData ac, int ii); - Libraray function
+         int findAccountIndexByAcctNum(int acnum, struct AccountTicketingData ac, int max, int TF);- module function
+         int findticketIndexByAcctNum(int tknum, struct AccountTicketingData ac, int maxi, int TF); - module function
+         int loadAccounts(struct Account* ac, int size);- module function
+         int loadTickets(struct Ticket* TK, int size);- module function
+         int loadAccounts(struct Account* ac, int size);- Libraray function
+         int loadTickets(struct Ticket* TK, int size);- module function
+
+
+Q-2). Identify two (2) major components (features) from the assignment that you enjoyed developing 
+      and detail why you found it enjoyable. Your answer must be at least 200 words but no more than 
+      300.
+Ans)  Programming is really very enjoyable for me because we are dealing with the practical situations but it needs lots of practice and ability of critical thinking.
+      I enjoyed on working on this assignment and the 2 major components are as follows.
+      1) Structure is frequently used in this assignment and I enjoyed work with the structure with the different variables and different datatypes.
+         The process to design a structure is very easy we just need to understand the requirement of question and need to read instruction with the concentraction.
+         Usally strcuture increases the efficiency of programmer and saves time as well.
+     ex: - struct temp {
+        int tempnumber;
+        int tempindex;
+    };
+      2) Function plays salient role to complete this assignment I develop many functions throughout the program for different purposes.
+        I enjoyed on working on function because function is used to perform a specific task in the program.
+        Calling is function is used to call the specific function for different purpose. In this code I use mainly use function with integer return and null return value.
+    ex: - void pauseExecution(void) {
+    clear();
+    printf("<< ENTER key to Continue... >>");
+
+    clearStandardInputBuffer();
+
+    return;
+    }
+ 
+    
+Q-3). Identify two(2) major components (features) from the assignment that you disliked developing and 
+      detail why you found it so unlikable. Your answer must be at least 200 words but no more than 
+      300. 
+Ans)  This assigment is really hard because of its length and complexitity of function for desired output.
+      Two two feature that I found hard in the program are as folows:
+      1) Using pointer seems hard to me because throughout the code there are various pointer and plethora of function in which I have to use them 
+         it is very confusing to use it on correct place to get the desired output.
+      2) Throughout the code I use for loop number of time and everytime it was hard for me to use correct condition for the "for"
+         loop to get te correct output many times I got confused  I use different condition it was really hard for me.
+      ex - void countSavingSessionModifications(struct AccountTicketingData ac) {
+    int CountAC = 0;
+    int CountTK = 0;
+    int i;
+    for (i = 0; i < 15; i++) {
+        if (ac.accounts[i].acnumber != 0) {
+            CountAC++;
+        }
+    }
+    for (i = 0; i < 17; i++) {
+        if (ac.tickets[i].ticketnumber != 0) {
+            CountTK++;
+        }
+    }
+    printf("\nSaving session modifications...\n");
+    printf("   %d account saved.\n", CountAC);
+    printf("   %d tickets saved.", CountTK);
+
+}
