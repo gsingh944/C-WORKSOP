@@ -1,66 +1,26 @@
-/*
-==================
-WORKSHOP #6(Part-2)
-==================
-NAME- Gurpinder Singh
-STUDENT NO.- 140515206
-STUDENT Email - gsingh944@myseneca.ca
-SECTION CODE- OOP244ZAA
-Date : 2021/07/07
-Description:  define and create copy constructors,copy assignment,Prevent copying and assignment in a class,
-Overload insertion operator so the class can be printed using ostream,
-Overload extraction operator so the class can be read using istream
-*/
+==================================
+Name -Gurpinder Singh
+Student ID -140515206
+Email -  gsingh944@myseneca.ca
 
-Q-) Describe the ideas from this session that you learn?
-Ans). 
-       A C++ class is an object-oriented programming building component. It is a user-defined kind of data, which has its own data and member functions, accessible and utilised for instance building.
-1) Creating and defining copy builders: - The copy builder is a builder who builds an item by initialising it using an earlier constructed object of the same class. Initialize a different object of the same type. Copy an object to be sent to a function as an argument.  A constructor does not have any return values. A constructor can be overloaded.
-2) Defining and creating assignments for copies: A class can be a complicated entity, such that programmers have a particular function to do. The default is a compiler. Under some cases, a programmer must set its own copy assignment procedure, for example writes assignment operator who uses a dynamic memory for a deep copy.
-3) Three techniques to avoid such a duplicate are possible:
-   a) Private copy builder and assignment operator 
-   b) Use a specific mixture that is not copiable or remove the special member functions.
-   c) The file's wrapper class shouldn't have its instance duplicated.
+===================================
+Q-) Explain the concepts that you learn after completing this workshop?
+Ans) Programming is not an easy. I have a keen interest in programming but sometimes I stuck on 
+        various then I use many different books and websites to solve that issue.
+        In this Workshop I learn plethora of concepts:
+        1)A class's member functions can be defined either outside or inside the class specification. The function body is same in both situations, 
+          but the function header is different. 
+        2) If you want to define a member function outside of a class, you must include the function declaration (function prototype) in the class definition. 
+           Like any other function, the member function is declared inside the class. This declaration tells the compiler that the function is a member of the class 
+          but was defined outside of it. A member function must be defined (outside the class) in the programme after it is declared inside the class.
+       3)A class's member function can also be specified within the class. The class name and the scope resolution operator are not mentioned in the function header when a member function is defined inside the class. 
+          Furthermore, member functions specified within a class declaration are inline functions by default.
 
-  For instance: -
-               void TextFile::setFilename(const char* fname, bool isCopy) {
-                if (isCopy) {
-               m_filename = new char[strLen(fname) + 3];
-               strCpy(m_filename, "C_");
-               strCat(m_filename, fname);
-                 }
-               else {
-             m_filename = new char[strLen(fname) + 1];
-              strCpy(m_filename, fname);
-               }
-                }
-
-Q-) Explain the difficulties that you face in this Assignment?
-Ans) As a programmer I am dealing with the amount of projects and I have stayed at several places, but that's where I learn. 
-         It appears to me difficult to create duplicate constructors in this workshop. Copy constructors are not multi-purpose since constructors are not inherited from the parent class by their offspring class. 
-        We will have trouble cloning an object in the copy builder if we try to refer to a child from a parent class reference.
-         Moreover, it appears difficult for me to create a duplicate assignment.
-        There are exceptions describted in the dynamic exception specification to the implicitly defined copy assignment operator.
-         The copy constructor and the assignment operator should always be kept private. 
-        We need to utilise a specific mixing that cannot be copied or deleted. During the workshop, we used all these principles. During the implementation of the project, I have experienced several problems. The copy constructor is a constructor who builds an item by initialising it using an earlier constructed object of the same class. A constructor has no return values and a builder can be overloaded. The programmer must utilise a specific method to do this by means of a class might be a complicated entity.
-       Example: 
-                           void TextFile::loadText() {
-                            if (m_filename) {
-                           unsigned indcounting = 0;
-                           string textofLine;
-                           if (m_textLines) {
-                          delete[] m_textLines;
-                           m_textLines = nullptr;
-                            }
-                          m_textLines = new Line[m_noOfLines];
-                          ifstream fileRead(m_filename);
-                          if (fileRead.is_open()) {
-                          while (getline(fileRead, textofLine)) {
-                          m_textLines[indcounting].m_value = new char[strLen(textofLine.c_str()) + 1];
-                          strCpy(m_textLines[indcounting].m_value, textofLine.c_str());
-                          indcounting++;
-                            }
-                              }
-                         m_noOfLines = indcounting;
-                              }
-                              }
+Q-) Explain the difficulties that you face in this workshop?
+Ans) I face several difficulties on working with this workshop: 
+        1) In the PairSummable class, I utilised two static variables: one is an unknown typed variable that stores the value, and the other is a size t type variable that stores the minimum field width.
+           Because static variables cannot be initialised within a class, I had to specify them outside of the class. Another issue is that I needed to initialise a "initial" variable that didn't know what type it was. 
+           Furthermore, this variable serves as the default value in the PairSummable(const K& key, const V& value = initial) argument.
+       2) I utilised template class in all header files. To put it another way, I've declared every function in every header file.
+          The explanation is simple: if I create a templet class in the header file and define functions in the cpp file, as in prior workshops, the compiler will fail to build because it does not recognise the data type.
+           A template isn't a function or a class. As a result, the template's declaration and definition should be implemented at the same time so that the compiler can read it.
